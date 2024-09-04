@@ -195,3 +195,43 @@ fun main(args: Array<String>) {
 ```
 {% endtab %}
 {% endtabs %}
+
+Example: /ban command
+
+{% tabs %}
+{% tab title="Java" %}
+```java
+@Command("ban")
+@Description("Bans the given user")
+@CommandPermission(Permission.BAN_MEMBERS)
+public void ban(
+    SlashCommandActor actor,
+    Member target,
+    @Range(min = 1) long days
+) {
+    actor.replyToInteraction("User **" + target.getEffectiveName() + "** has been banned!").queue();
+}
+```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+@Command("ban")
+@Description("Bans the given user")
+@CommandPermission(Permission.BAN_MEMBERS)
+fun ban(
+    actor: SlashCommandActor,
+    target: Member,
+    @Range(min = 1) days: Long
+) {
+    actor.replyToInteraction("User **${target.effectiveName}** has been banned!").queue()
+}
+```
+{% endtab %}
+{% endtabs %}
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>/ban command</p></figcaption></figure>
+
+Which will also do client-side range validation:
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>

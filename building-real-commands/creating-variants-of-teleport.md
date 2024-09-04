@@ -1,8 +1,8 @@
 ---
+icon: transporter-1
 description: >-
   This page will explain how we can use Lamp to create multiple variants of the
   /teleport command
-icon: transporter-1
 ---
 
 # Creating variants of /teleport
@@ -193,7 +193,7 @@ When Lamp encounters a name enclosed by `<>`, it will automatically infer it as 
 
 > :warning:  **Important note**: You need to [enable parameter names ](../#optional-preserve-parameter-names)for this, or define an `@Named` annotation on the method's parameters. Lamp will throw an exception if it cannot find the parameter.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Using <code>/teleport &#x3C;target> here</code> command</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption><p>Using <code>/teleport &#x3C;target> here</code> command</p></figcaption></figure>
 
 Let's create the simple `/teleport <to>`&#x20;
 

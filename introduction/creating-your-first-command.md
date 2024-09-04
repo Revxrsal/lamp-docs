@@ -1,6 +1,6 @@
 ---
-description: We will create our very first command
 icon: terminal
+description: We will create our very first command
 ---
 
 # Creating your first command
@@ -69,7 +69,7 @@ class TestPlugin : JavaPlugin() {
 \
 Let's see Lamp in action:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>/greet in Minecraft (PaperSpigot 1.21)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>/greet in Minecraft (PaperSpigot 1.21)</p></figcaption></figure>
 
 Great! Let's buff our command with more arguments.&#x20;
 
@@ -107,11 +107,11 @@ Which will generate the following command:
 
 Running it, we get:
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Executing /greet Revxrsal</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Executing /greet Revxrsal</p></figcaption></figure>
 
 Notice that by specifying the Player type, we automatically get tab completions for free! Also, if we try to input an invalid player, we get the following error message:&#x20;
 
-<img src="../.gitbook/assets/image (4).png" alt="" data-size="original">
+<img src="../.gitbook/assets/image (4) (1).png" alt="" data-size="original">
 
 
 
