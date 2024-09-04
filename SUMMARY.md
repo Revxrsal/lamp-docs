@@ -21,3 +21,4 @@
 * [Orphan command](building-real-commands/orphan-command.md)
 * [Exception handling](building-real-commands/exception-handling.md)
 * [Hooks](building-real-commands/hooks.md)
+* [Dependency injection](building-real-commands/dependency-injection.md)
