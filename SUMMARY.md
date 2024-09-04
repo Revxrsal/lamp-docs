@@ -20,8 +20,8 @@
 
 * [Creating variants of /teleport](how-to/creating-variants-of-teleport.md)
 * [Custom parameter types](how-to/custom-parameter-types.md)
-* [Context parameters](how-to/context-parameters.md)
 * [Suggestions and auto-completion](how-to/suggestions-and-auto-completion.md)
+* [Context parameters](how-to/context-parameters.md)
 * [Command permissions](how-to/command-permissions.md)
 * [Parameter validators](how-to/parameter-validators.md)
 * [Command conditions](how-to/command-conditions.md)

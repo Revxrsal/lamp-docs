@@ -1,6 +1,6 @@
 ---
-description: This page will explain how you can create and resolve custom parameter types
 icon: vial
+description: This page will explain how you can create and resolve custom parameter types
 ---
 
 # Custom parameter types
@@ -437,6 +437,109 @@ class QuestCommands {
 ```
 {% endtab %}
 {% endtabs %}
+
+### Using a ParameterType Factory
+
+`ParameterType.Factory` allows you to dynamically create `ParameterType` instances based on the type of parameter and annotations. This is particularly useful for complex parameter parsing scenarios. Below is an example demonstrating how to create a custom factory for handling enum types.
+
+#### Example: Enum Parameter Type Factory
+
+This example shows how to implement a `ParameterType.Factory` that handles enum types. The factory converts a string input into an enum constant and provides suggestions based on enum names.
+
+{% tabs %}
+{% tab title="Java" %}
+```java
+public enum EnumParameterTypeFactory implements ParameterType.Factory<CommandActor> {
+    INSTANCE;
+
+    @Override
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public <T> ParameterType<CommandActor, T> create(@NotNull Type parameterType, @NotNull AnnotationList annotations, @NotNull Lamp<CommandActor> lamp) {
+        Class<?> rawType = getRawType(parameterType);
+        if (!rawType.isEnum())
+            return null;
+        Enum<?>[] enumConstants = (Enum<?>[]) rawType.getEnumConstants();
+        Map<String, Enum<?>> byKeys = new HashMap<>();
+        List<String> suggestions = new ArrayList<>();
+        for (Enum<?> enumConstant : enumConstants) {
+            String name = enumConstant.name().toLowerCase();
+            byKeys.put(name, enumConstant);
+            suggestions.add(name);
+        }
+        return new EnumParameterType(byKeys, suggestions);
+    }
+
+    private record EnumParameterType<E extends Enum<E>>(
+            Map<String, E> byKeys,
+            List<String> suggestions
+    ) implements ParameterType<CommandActor, E> {
+
+        @Override
+        public E parse(@NotNull MutableStringStream input, @NotNull ExecutionContext<CommandActor> context) {
+            String key = input.readUnquotedString();
+            E value = byKeys.get(key.toLowerCase());
+            if (value != null)
+                return value;
+            throw new EnumNotFoundException(key);
+        }
+
+        @Override
+        public @NotNull SuggestionProvider<CommandActor> defaultSuggestions() {
+            return SuggestionProvider.of(suggestions);
+        }
+
+        @Override
+        public @NotNull PrioritySpec parsePriority() {
+            return PrioritySpec.highest();
+        }
+    }
+}
+```
+{% endtab %}
+
+{% tab title="Kotlin" %}
+```kotlin
+object EnumParameterTypeFactory : ParameterType.Factory<CommandActor> {
+    
+    @Suppress("UNCHECKED_CAST")
+    override fun <T> create(parameterType: Type, annotations: AnnotationList, lamp: Lamp<CommandActor>): ParameterType<CommandActor, T>? {
+        val rawType = getRawType(parameterType)
+        if (!rawType.isEnum) return null
+        val enumConstants = rawType.enumConstants as Array<Enum<*>>
+        val byKeys = mutableMapOf<String, Enum<*>>()
+        val suggestions = mutableListOf<String>()
+        for (enumConstant in enumConstants) {
+            val name = enumConstant.name.lowercase()
+            byKeys[name] = enumConstant
+            suggestions.add(name)
+        }
+        return EnumParameterType(byKeys, suggestions) as ParameterType<CommandActor, T>
+    }
+
+    private data class EnumParameterType<E : Enum<E>>(
+        val byKeys: Map<String, E>,
+        val suggestions: List<String>
+    ) : ParameterType<CommandActor, E> {
+
+        override fun parse(input: MutableStringStream, context: ExecutionContext<CommandActor>): E {
+            val key = input.readUnquotedString()
+            return byKeys[key.lowercase()] ?: throw EnumNotFoundException(key)
+        }
+
+        override fun defaultSuggestions(): SuggestionProvider<CommandActor> {
+            return SuggestionProvider.of(suggestions)
+        }
+
+        override fun parsePriority(): PrioritySpec {
+            return PrioritySpec.highest()
+        }
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+This example demonstrates how to create a `ParameterType.Factory` that can parse enums and provide suggestions based on the enum values.
 
 Well done! In this tutorial, we have learned the following:
 
