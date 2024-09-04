@@ -1,5 +1,9 @@
 ---
 icon: file-circle-exclamation
+description: >-
+  This page explains how to use exception handlers, which allow you to catch and
+  handle exceptions that occur during command execution, and modify the default
+  behavior for each exception.
 ---
 
 # Exception handling

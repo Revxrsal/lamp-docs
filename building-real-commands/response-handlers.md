@@ -1,5 +1,8 @@
 ---
 icon: table-tennis-paddle-ball
+description: >-
+  This page explains how to use response handlers, which process the return
+  values of command methods, enabling custom handling of command outputs.
 ---
 
 # Response handlers

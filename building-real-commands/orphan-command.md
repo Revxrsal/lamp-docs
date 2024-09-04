@@ -1,5 +1,9 @@
 ---
 icon: tree
+description: >-
+  This page explains how to use orphan commands, which are commands defined
+  without the @Command annotation and whose path will be determined dynamically
+  at runtime.
 ---
 
 # Orphan command

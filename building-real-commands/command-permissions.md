@@ -1,5 +1,8 @@
 ---
 icon: user-slash
+description: >-
+  Command permissions allow you to restrict access to commands based on user
+  permissions
 ---
 
 # Command permissions

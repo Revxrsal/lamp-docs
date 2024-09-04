@@ -1,5 +1,9 @@
 ---
 icon: nfc-magnifying-glass
+description: >-
+  Context resolvers allow for dynamic resolution of context-specific values into
+  command parameters, enabling commands to adapt based on the environment or
+  actor state.
 ---
 
 # Context parameters

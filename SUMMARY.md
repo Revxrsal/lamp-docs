@@ -7,6 +7,15 @@
 * [Creating your first command](introduction/creating-your-first-command.md)
 * [Improving our greet command](introduction/improving-our-greet-command.md)
 
+## Platforms
+
+* [Bukkit / Spigot / Paper](platforms/bukkit-spigot-paper.md)
+* [BungeeCord](platforms/bungeecord.md)
+* [Velocity](platforms/velocity.md)
+* [Sponge](platforms/sponge.md)
+* [Brigadier](platforms/brigadier.md)
+* [JDA](platforms/jda.md)
+
 ## Building REAL commands
 
 * [Creating variants of /teleport](building-real-commands/creating-variants-of-teleport.md)
@@ -22,3 +31,4 @@
 * [Exception handling](building-real-commands/exception-handling.md)
 * [Hooks](building-real-commands/hooks.md)
 * [Dependency injection](building-real-commands/dependency-injection.md)
+* [Visitors](building-real-commands/visitors.md)

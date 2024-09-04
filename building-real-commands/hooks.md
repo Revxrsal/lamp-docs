@@ -1,5 +1,8 @@
 ---
 icon: fishing-rod
+description: >-
+  This page explains how to use hooks, which allow for injecting custom logic
+  before or after command registration, unregistration, or execution.
 ---
 
 # Hooks

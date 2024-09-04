@@ -1,5 +1,8 @@
 ---
 icon: syringe
+description: >-
+  This page explains how to use dependency injection, which provides a way to
+  inject dependencies (instances of objects) into command classes
 ---
 
 # Dependency injection
