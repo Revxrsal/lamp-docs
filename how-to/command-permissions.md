@@ -105,8 +105,8 @@ Register your custom `CommandPermission.Factory` with the `Lamp` instance:
 {% tab title="Java" %}
 ```java
 var lamp = BukkitLamp.builder(this)
-    .permissionFactory(GroupPermissionFactory())
-    .build()
+    .permissionFactory(new GroupPermissionFactory())
+    .build();
 ```
 {% endtab %}
 
