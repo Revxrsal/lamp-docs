@@ -13,7 +13,9 @@
 * [BungeeCord](platforms/bungeecord.md)
 * [Velocity](platforms/velocity.md)
 * [Sponge](platforms/sponge.md)
+* [Fabric](platforms/fabric.md)
 * [Brigadier](platforms/brigadier.md)
+* [Minestom](platforms/minestom.md)
 * [JDA](platforms/jda.md)
 
 ## How-to
