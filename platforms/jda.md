@@ -171,6 +171,9 @@ public static void main(String[] args) {
 
     // after we register all commands, we *must* call this to
     // send our commands as slash commands
+    //
+    // slashCommands is JDAVisitors#slashCommands. We
+    // use static imports for brevity.
     lamp.accept(slashCommands(jda));
 }
 ```
@@ -190,6 +193,9 @@ fun main(args: Array<String>) {
 
     // After we register all commands, we *must* call this to
     // send our commands as slash commands
+    //
+    // slashCommands is JDAVisitors#slashCommands. We
+    // use static imports for brevity.
     lamp.accept(slashCommands(jda))
 }
 ```

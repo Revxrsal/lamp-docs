@@ -17,6 +17,7 @@
 * [Brigadier](platforms/brigadier.md)
 * [Minestom](platforms/minestom.md)
 * [JDA](platforms/jda.md)
+* [Command line](platforms/command-line.md)
 
 ## How-to
 

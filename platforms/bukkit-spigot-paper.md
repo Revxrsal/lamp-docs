@@ -19,8 +19,8 @@ Lamp's Brigadier integration is enabled by default for 1.13+ but with some nuanc
 | Version         | Brigadier Supported                                               |
 | --------------- | ----------------------------------------------------------------- |
 | 1.13 - 1.19     | :white\_check\_mark:                                              |
-| 1.19.1 - 1.20.6 | :heavy\_check\_mark: Paper only                                   |
-| 1.21+           | :heavy\_check\_mark: Paper only + **requires the `paper` module** |
+| 1.19.1 - 1.20.5 | :heavy\_check\_mark: Paper only                                   |
+| 1.20.6+         | :heavy\_check\_mark: Paper only + **requires the `paper` module** |
 
 ## Setting up
 
@@ -167,6 +167,12 @@ tasks.withType<KotlinJvmCompile> {
 
 Adds a command permission for the given command
 
+### `@FallbackPrefix`
+
+Customizes the fallback prefix of a command
+
+Bukkit uses this fallback prefix when two commands conflict with their main label, in which Bukkit would register it as `/<fallback prefix>:command` instead.
+
 ## Supported Bukkit types
 
 * `org.bukkit.command.CommandSender` and its subclasses in place of CommandActor
@@ -222,3 +228,4 @@ class MyPlugin : JavaPlugin() {
 ```
 {% endtab %}
 {% endtabs %}
+
