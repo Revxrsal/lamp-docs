@@ -19,15 +19,13 @@ Lamp's Brigadier integration is enabled by default for 1.13+ but with some nuanc
 | Version         | Brigadier Supported                                               |
 | --------------- | ----------------------------------------------------------------- |
 | 1.13 - 1.19     | :white\_check\_mark:                                              |
-| 1.19.1 - 1.20.5 | :heavy\_check\_mark: Paper only                                   |
-| 1.20.6+         | :heavy\_check\_mark: Paper only + **requires the `paper` module** |
+| 1.19.1+         | :heavy\_check\_mark: Paper only                                   |
 
 ## Setting up
 
 ### Prerequisites
 
 * Java 17 or newer
-* `paper`: Java 21 or newer
 
 ### Adding Lamp dependency
 
@@ -57,13 +55,6 @@ To add Lamp to your project, add the following (depending on your project struct
       <artifactId>lamp.brigadier</artifactId>
       <version>[VERSION]</version>
   </dependency>
-  
-  <!-- Optional: Paper module -->
-  <dependency>
-      <groupId>io.github.revxrsal</groupId>
-      <artifactId>lamp.paper</artifactId>
-      <version>[VERSION]</version>
-  </dependency>  
 </dependencies>
 ```
 {% endtab %}
@@ -71,17 +62,14 @@ To add Lamp to your project, add the following (depending on your project struct
 {% tab title="build.gradle" %}
 ```groovy
 dependencies {
-   // Required for all platforms
-   implementation 'io.github.revxrsal:lamp.common:[VERSION]'
+    // Required for all platforms
+    implementation 'io.github.revxrsal:lamp.common:[VERSION]'
    
-   // Bukkit module
-   implementation 'io.github.revxrsal:lamp.bukkit:[VERSION]'
+    // Bukkit module
+    implementation 'io.github.revxrsal:lamp.bukkit:[VERSION]'
    
-   // Optional: Brigadier module
-   implementation 'io.github.revxrsal:lamp.brigadier:[VERSION]'
-   
-   // Optional: Paper module (requires Java 21+)
-   implementation 'io.github.revxrsal:lamp.paper:[VERSION]'
+    // Optional: Brigadier module
+    implementation 'io.github.revxrsal:lamp.brigadier:[VERSION]'
 }
 ```
 {% endtab %}
@@ -97,9 +85,6 @@ dependencies {
     
     // Optional: Brigadier module
     implementation("io.github.revxrsal:lamp.brigadier:[VERSION]")
-    
-    // Optional: Paper module (requires Java 21+)
-    implementation("io.github.revxrsal:lamp.paper:[VERSION]")
 }
 ```
 {% endtab %}
