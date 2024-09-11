@@ -1,13 +1,9 @@
 ---
-description: This page explains how to create help commands in Lamp
 icon: message-question
+description: This page explains how to create help commands in Lamp
 ---
 
 # Help commands
-
-The Help API in Lamp provides powerful functionality for managing and displaying command help menus.&#x20;
-
-Here’s a detailed explanation of how you can use this API effectively.
 
 ### Including Help Interfaces in Command Methods
 
