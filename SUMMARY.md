@@ -29,6 +29,7 @@
 * [Parameter validators](how-to/parameter-validators.md)
 * [Command conditions](how-to/command-conditions.md)
 * [Response handlers](how-to/response-handlers.md)
+* [Help commands](how-to/help-commands.md)
 * [Annotation replacers](how-to/annotation-replacers.md)
 * [Orphan command](how-to/orphan-command.md)
 * [Exception handling](how-to/exception-handling.md)
