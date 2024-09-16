@@ -1,8 +1,8 @@
 ---
+icon: wand-sparkles
 description: >-
   This page explains how we can create static, dynamic and context-aware
   auto-completions
-icon: wand-sparkles
 ---
 
 # Suggestions and auto-completion
@@ -100,7 +100,7 @@ We can register this in our `Lamp.Builder`:
 ```java
 var lamp = Lamp.builder()
     .suggestionProviders(providers -> {
-        providers.addProvider(World.class, (input, context) -> {
+        providers.addProvider(World.class, context -> {
             return Bukkit.getWorlds().stream()
                     .map(World::getName)
                     .toList();
@@ -115,7 +115,7 @@ var lamp = Lamp.builder()
 ```kotlin
 val lamp = Lamp.builder<CommandActor>()
     .suggestionProviders { providers ->
-        providers.addProvider(World::class.java) { _, _ ->
+        providers.addProvider(World::class.java) { _ ->
             Bukkit.getWorlds().map { it.name }
         }
     }
@@ -187,7 +187,7 @@ var lamp = Lamp.builder()
     .suggestionProviders(providers -> {
         providers.addProviderForAnnotation(WithPermission.class, withPermission -> {
             String permission = withPermission.value(); // <-- the value inside @WithPermission
-            return (input, context) -> { // <-- here we return a SuggestionProvider
+            return context -> { // <-- here we return a SuggestionProvider
                 return Bukkit.getOnlinePlayers()
                         .stream()
                         .filter(player -> player.hasPermission(permission))
@@ -206,7 +206,7 @@ val lamp = Lamp.builder<CommandActor?>()
     .suggestionProviders { providers ->
         providers.addProviderForAnnotation(WithPermission::class.java) { withPermission: WithPermission ->
             val permission = withPermission.value
-            SuggestionProvider { _, _ ->
+            SuggestionProvider { _ ->
                 Bukkit.getOnlinePlayers().asSequence()
                     .filter { it.hasPermission(permission) }
                     .map { it.name }
@@ -268,7 +268,7 @@ fun helpOp(
 >         if (withPermission == null)
 >             return null;
 >         String permission = withPermission.value();
->         return (input, context) -> {
+>         return context -> {
 >             return Bukkit.getOnlinePlayers().stream()
 >                     .filter(player -> player.hasPermission(permission))
 >                     .map(Player::getName)
@@ -394,7 +394,7 @@ We made sure our factory only works on enums. Let's proceed to creating the sugg
     }
     
     /* Return a suggestion provider that always returns suggestions */
-    return (input, context) -> suggestions;
+    return context -> suggestions;
 }
 ```
 {% endtab %}
@@ -414,7 +414,7 @@ override fun create(
         .map { (it as Enum<*>).name.lowercase() }
 
     /* Return a suggestion provider that always returns suggestions */
-    return SuggestionProvider { _, _ -> suggestions }
+    return SuggestionProvider { _ -> suggestions }
 }
 ```
 {% endtab %}
@@ -455,7 +455,7 @@ Let's imagine that we have this suggestion provider that automatically suggests 
 ```java
 public final class DefaultWorlds implements SuggestionProvider<BukkitCommandActor> {
     
-    @Override public @NotNull List<String> getSuggestions(@NotNull StringStream input, @NotNull ExecutionContext<BukkitCommandActor> context) {
+    @Override public @NotNull List<String> getSuggestions(@NotNull ExecutionContext<BukkitCommandActor> context) {
         return Bukkit.getWorlds().stream()
                 .map(World::getName)
                 .filter(name -> name.startsWith("world"))
@@ -469,7 +469,7 @@ public final class DefaultWorlds implements SuggestionProvider<BukkitCommandActo
 ```kotlin
 class DefaultWorlds : SuggestionProvider<BukkitCommandActor> {
     
-    override fun getSuggestions(input: StringStream, context: ExecutionContext<BukkitCommandActor>): List<String> {
+    override fun getSuggestions(context: ExecutionContext<BukkitCommandActor>): List<String> {
         return Bukkit.getWorlds().stream()
             .map { obj: World -> obj.name }
             .filter { name: String -> name.startsWith("world") }

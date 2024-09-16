@@ -133,10 +133,9 @@ All Lamp to Brigadier conversions are done using two main classes:
 * **`BrigadierConverter`**: An interface that specifies how certain Brigadier or Lamp types should be converted.
   * `createActor`: Specifies how to convert Brigadier's sender S to Lamp's CommandActor A
   * `getArgumentType`: Specifies how to convert Lamp's ParameterType to Brigadier's ArgumentType. **It's recommended to use the registry Lamp provides, using the `ArgumentTypes` class**.
-* **`BrigadierAdapter`**: Contains utility functions that accept Lamp objects and a **`BrigadierConverter`.**
-  * `createRootNode`: Creates a `RootCommandNode` from a `Lamp` instance
-  * `createNode(ExecutableCommand, BrigadierConverter)`: Creates a `LiteralCommandNode` from a Lamp `ExecutableCommand`
-  * `createNode(ExecutableCommand, CommandNode node, BrigadierConverter, Lamp)`: Creates a Brigadier `CommandNode` from a Lamp `CommandNode`.
+* **`BrigadierParser`**: Contains functions that accept Lamp objects and a **`BrigadierConverter`** to convert into respective Brigadier types**.**
+  * `createNode(ExecutableCommand)`: Creates a `LiteralCommandNode` from a Lamp `ExecutableCommand`
+  * `createNode(CommandNode node)`: Creates a Brigadier `CommandNode` from a Lamp `CommandNode`.
   * `createRequirement`: Creates a `Predicate` for Brigadier from Lamp's CommandPermission
   * `createAction`: Creates a `Command<S>` from Lamp's `CommandAction`
   * `createSuggestionProvider`: Creates a Brigadier `SuggestionProvider` from Lamp's `SuggestionProvider`.
