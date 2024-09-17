@@ -37,7 +37,8 @@ To register an `OrphanCommand`, the command must be wrapped using the `Orphans` 
     // ^^^
     // will get replaced with @Command("the path here")
     // at runtime
-    public void onCommand() {
+    public void onCommand(CommandActor actor) {
+        // ...
     }
 
     @Subcommand("bar")
@@ -56,7 +57,8 @@ class Foo : OrphanCommand {
     // ^^^
     // will get replaced with @Command("the path here")
     // at runtime
-    fun onCommand() {
+    fun onCommand(actor: CommandActor) {
+        // ...
     }
     
     @Subcommand("bar")
