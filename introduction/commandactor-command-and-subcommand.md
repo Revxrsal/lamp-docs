@@ -1,8 +1,8 @@
 ---
+icon: user
 description: >-
   This page will introduce you to the fundamentals of creating commands with
   Lamp
-icon: user
 ---
 
 # CommandActor, @Command and @Subcommand
@@ -83,3 +83,35 @@ public class GameCommands {
 ```
 
 * Any trailing arguments that are not defined inside the annotation will automatically be added to the end of the command.
+
+## @CommandPlaceholder
+
+Besides `@Command` and `@Subcommand`, Lamp provides an auxiliary annotation `@CommandPlaceholder`. This has two main use cases:
+
+1. For automatically inheriting the closest `@Command` and `@Subcommand` path of the declaring class.
+
+```java
+@Command({"test", "foo bar", "buzz"})
+public final class TestCommands {
+
+    @CommandPlaceholder // <- equals @Command({"test", "foo bar", "buzz"})
+    public void onTest() {
+        // ...
+    }
+}
+```
+
+2. For [orphan commands](../how-to/orphan-command.md), this will get replaced with the `@Command` of the path specified by the orphan command:
+
+```java
+public final class TestCommands implements OrphanCommand {
+
+    @CommandPlaceholder
+    // ^^
+    // will get replaced with a @Command("the path") at
+    // runtime
+    public void onTest() {
+
+    }
+}
+```

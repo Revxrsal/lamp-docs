@@ -31,21 +31,34 @@ To register an `OrphanCommand`, the command must be wrapped using the `Orphans` 
 
 {% tabs %}
 {% tab title="Java" %}
-```java
-public class Foo implements OrphanCommand {
+<pre class="language-java"><code class="lang-java">public class Foo implements OrphanCommand {
+<strong>
+</strong>    @CommandPlaceholder 
+    // ^^^
+    // will get replaced with @Command("the path here")
+    // at runtime
+    public void onCommand() {
+    }
 
     @Subcommand("bar")
     public void bar(CommandActor actor) {
         actor.reply("Hello!");
     }
 }
-```
+</code></pre>
 {% endtab %}
 
 {% tab title="Kotlin" %}
 ```kotlin
 class Foo : OrphanCommand {
-
+    
+    @CommandPlaceholder 
+    // ^^^
+    // will get replaced with @Command("the path here")
+    // at runtime
+    fun onCommand() {
+    }
+    
     @Subcommand("bar")
     fun bar(actor: CommandActor) {
         actor.reply("Hello!")

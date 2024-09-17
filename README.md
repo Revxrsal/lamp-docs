@@ -17,7 +17,7 @@ To enable Java 17, add the following (depending on your project structure):
 
 {% tabs %}
 {% tab title="pom.xml" %}
-```markup
+```html
 <properties>
         <maven.compiler.release>17</maven.compiler.release>
 </properties>
@@ -47,7 +47,7 @@ To add Lamp to your project, add the following (depending on your project struct
 
 {% tabs %}
 {% tab title="pom.xml" %}
-```markup
+```html
 <dependencies>
   <!-- Required for all platforms -->
   <dependency>
@@ -106,7 +106,7 @@ Lamp identifies parameters by their names and uses them to generate relevant com
 
 {% tabs %}
 {% tab title="pom.xml" %}
-```markup
+```html
 <plugins>
   <plugin>
     <groupId>org.apache.maven.plugins</groupId>
@@ -146,6 +146,51 @@ tasks.withType<JavaCompile> {
 
 // optional: if you're using Kotlin
 tasks.withType<KotlinJvmCompile> {
+    compilerOptions {
+        javaParameters = true
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+#### For Kotlin
+
+Here’s how you can set the Kotlin compiler option `javaParameters = true` in three different build systems, using the tab format you specified:
+
+{% tabs %}
+{% tab title="pom.xml" %}
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-maven-plugin</artifactId>
+            <!-- ... your configuration here ... -->
+            <configuration>
+                <args>
+                    <arg>-java-parameters</arg>
+                </args>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
+{% endtab %}
+
+{% tab title="build.gradle" %}
+```groovy
+kotlin {
+    compilerOptions {
+        javaParameters = true
+    }
+}
+```
+{% endtab %}
+
+{% tab title="build.gradle.kts" %}
+```kotlin
+kotlin {
     compilerOptions {
         javaParameters = true
     }
