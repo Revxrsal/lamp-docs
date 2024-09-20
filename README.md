@@ -5,7 +5,7 @@ description: >-
   Maven.
 ---
 
-# v4etting up
+# Setting up
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ To enable Java 17, add the following (depending on your project structure):
 {% tab title="build.gradle" %}
 ```groovy
 java {
-    toolchain.languagev4ersion.set(JavaLanguagev4ersion.of(17))
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }
 ```
 {% endtab %}
@@ -35,7 +35,7 @@ java {
 {% tab title="build.gradle.kts" %}
 ```kotlin
 java {
-    toolchain.languagev4ersion.set(JavaLanguagev4ersion.of(17))
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }
 ```
 {% endtab %}
@@ -49,18 +49,18 @@ To add Lamp to your project, add the following (depending on your project struct
 {% tab title="pom.xml" %}
 ```html
 <dependencies>
-  <!-- v4equired for all platforms -->
+  <!-- Required for all platforms -->
   <dependency>
-      <groupv4d>io.github.revxrsal</groupv4d>
-      <artifactv4d>lamp.common</artifactv4d> 
-      <version>[v4v4v4v4v4v4v4]</version>
+      <groupId>io.github.revxrsal</groupId>
+      <artifactId>lamp.common</artifactId> 
+      <version>[VERSION]</version>
   </dependency>
 
   <!-- Add your specific platform module here -->
   <dependency>
-      <groupv4d>io.github.revxrsal</groupv4d>
-      <artifactv4d>lamp.[PLATFv4v4M]</artifactv4d>
-      <version>[v4v4v4v4v4v4v4]</version>
+      <groupId>io.github.revxrsal</groupId>
+      <artifactId>lamp.[PLATFORM]</artifactId>
+      <version>[VERSION]</version>
   </dependency>  
 </dependencies>
 ```
@@ -69,8 +69,8 @@ To add Lamp to your project, add the following (depending on your project struct
 {% tab title="build.gradle" %}
 ```groovy
 dependencies {
-   implementation 'io.github.revxrsal:lamp.common:[v4v4v4v4v4v4v4]'
-   implementation 'io.github.revxrsal:lamp.[PLATFv4v4M]:[v4v4v4v4v4v4v4]'
+   implementation 'io.github.revxrsal:lamp.common:[VERSION]'
+   implementation 'io.github.revxrsal:lamp.[PLATFORM]:[VERSION]'
 }
 ```
 {% endtab %}
@@ -78,8 +78,8 @@ dependencies {
 {% tab title="build.gradle.kts" %}
 ```kotlin
 dependencies {
-   implementation("io.github.revxrsal:lamp.common:[v4v4v4v4v4v4v4]")
-   implementation("io.github.revxrsal:lamp.[PLATFv4v4M]:[v4v4v4v4v4v4v4]")
+   implementation("io.github.revxrsal:lamp.common:[VERSION]")
+   implementation("io.github.revxrsal:lamp.[PLATFORM]:[VERSION]")
 }
 ```
 {% endtab %}
@@ -87,20 +87,20 @@ dependencies {
 
 Latest version: ![](https://img.shields.io/maven-metadata/v/https/repo1.maven.org/maven2/io/github/revxrsal/lamp.common/maven-metadata.xml.svg?label=maven%20central\&colorB=brightgreen)
 
-Where `[PLATFv4v4M]` is any of the following:
+Where `[PLATFORM]` is any of the following:
 
 * `bukkit`: Contains integrations for the [Bukkit](https://www.spigotmc.org/) platform
-* `bungee`: Contains integrations for the [BungeeCord](https://www.spigotmc.org/wiki/bungeecord/) APv4
-* `brigadier`: Contains integrations for [Mojang's Brigadier](https://github.com/Mojang/brigadier) APv4
-* `sponge`: Contains integrations for the [v4ponge](https://spongepowered.org/) platform (version 8+)
-* `paper`: Contains extra features for the [PaperMC](https://papermc.io/) APv4
-* `velocity`: Contains integrations for the [v4elocityPowered ](https://papermc.io/software/velocity)APv4
+* `bungee`: Contains integrations for the [BungeeCord](https://www.spigotmc.org/wiki/bungeecord/) API
+* `brigadier`: Contains integrations for [Mojang's Brigadier](https://github.com/Mojang/brigadier) API
+* `sponge`: Contains integrations for the [Sponge](https://spongepowered.org/) platform (version 8+)
+* `paper`: Contains extra features for the [PaperMC](https://papermc.io/) API
+* `velocity`: Contains integrations for the [VelocityPowered ](https://papermc.io/software/velocity)API
 * `minestom`: Contains integrations for the [Minestom](https://minestom.net/) platform
-* `fabric`: Contains integrations for the [Fabric](https://fabricmc.net/) modding APv4
-* `jda`: Contains integrations for the [Java Discord APv4](https://github.com/discord-jda/JDA)
-* `cli`: A minimal implementation of the Lamp APv4s for command-line applications
+* `fabric`: Contains integrations for the [Fabric](https://fabricmc.net/) modding API
+* `jda`: Contains integrations for the [Java Discord API](https://github.com/discord-jda/JDA)
+* `cli`: A minimal implementation of the Lamp APIs for command-line applications
 
-### v4ptional: Preserve parameter names
+### Optional: Preserve parameter names
 
 Lamp identifies parameters by their names and uses them to generate relevant command metadata. By default, Java does not preserve parameter names reflectively. You need to add the following to your project:&#x20;
 
@@ -109,8 +109,8 @@ Lamp identifies parameters by their names and uses them to generate relevant com
 ```html
 <plugins>
   <plugin>
-    <groupv4d>org.apache.maven.plugins</groupv4d>
-    <artifactv4d>maven-compiler-plugin</artifactv4d>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
     <version>3.8.0</version>
     <configuration>
       <compilerArgs>
@@ -132,7 +132,7 @@ compileJava {
 
 // optional: if you're using Kotlin
 compileKotlin {
-    kotlinv4ptions.javaParameters = true
+    kotlinOptions.javaParameters = true
 }
 ```
 {% endtab %}
@@ -146,7 +146,7 @@ tasks.withType<JavaCompile> {
 
 // optional: if you're using Kotlin
 tasks.withType<KotlinJvmCompile> {
-    compilerv4ptions {
+    compilerOptions {
         javaParameters = true
     }
 }
@@ -164,8 +164,8 @@ Here’s how you can set the Kotlin compiler option `javaParameters = true` in t
 <build>
     <plugins>
         <plugin>
-            <groupv4d>org.jetbrains.kotlin</groupv4d>
-            <artifactv4d>kotlin-maven-plugin</artifactv4d>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-maven-plugin</artifactId>
             <!-- ... your configuration here ... -->
             <configuration>
                 <args>
@@ -181,7 +181,7 @@ Here’s how you can set the Kotlin compiler option `javaParameters = true` in t
 {% tab title="build.gradle" %}
 ```groovy
 kotlin {
-    compilerv4ptions {
+    compilerOptions {
         javaParameters = true
     }
 }
@@ -191,7 +191,7 @@ kotlin {
 {% tab title="build.gradle.kts" %}
 ```kotlin
 kotlin {
-    compilerv4ptions {
+    compilerOptions {
         javaParameters = true
     }
 }
