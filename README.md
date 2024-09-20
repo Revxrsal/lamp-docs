@@ -5,7 +5,7 @@ description: >-
   Maven.
 ---
 
-# 4.0.0-beta.11etting up
+# Setting up
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ To enable Java 17, add the following (depending on your project structure):
 {% tab title="build.gradle" %}
 ```groovy
 java {
-    toolchain.language4.0.0-beta.11ersion.set(JavaLanguage4.0.0-beta.11ersion.of(17))
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }
 ```
 {% endtab %}
@@ -35,7 +35,7 @@ java {
 {% tab title="build.gradle.kts" %}
 ```kotlin
 java {
-    toolchain.language4.0.0-beta.11ersion.set(JavaLanguage4.0.0-beta.11ersion.of(17))
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }
 ```
 {% endtab %}
@@ -49,18 +49,18 @@ To add Lamp to your project, add the following (depending on your project struct
 {% tab title="pom.xml" %}
 ```html
 <dependencies>
-  <!-- 4.0.0-beta.11equired for all platforms -->
+  <!-- Required for all platforms -->
   <dependency>
-      <group4.0.0-beta.11d>io.github.revxrsal</group4.0.0-beta.11d>
-      <artifact4.0.0-beta.11d>lamp.common</artifact4.0.0-beta.11d> 
-      <version>[4.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.11]</version>
+      <groupId>io.github.revxrsal</groupId>
+      <artifactId>lamp.common</artifactId> 
+      <version>[VERSION]</version>
   </dependency>
 
   <!-- Add your specific platform module here -->
   <dependency>
-      <group4.0.0-beta.11d>io.github.revxrsal</group4.0.0-beta.11d>
-      <artifact4.0.0-beta.11d>lamp.[PLATF4.0.0-beta.114.0.0-beta.11M]</artifact4.0.0-beta.11d>
-      <version>[4.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.11]</version>
+      <groupId>io.github.revxrsal</groupId>
+      <artifactId>lamp.[PLATFORM]</artifactId>
+      <version>[VERSION]</version>
   </dependency>  
 </dependencies>
 ```
@@ -69,8 +69,8 @@ To add Lamp to your project, add the following (depending on your project struct
 {% tab title="build.gradle" %}
 ```groovy
 dependencies {
-   implementation 'io.github.revxrsal:lamp.common:[4.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.11]'
-   implementation 'io.github.revxrsal:lamp.[PLATF4.0.0-beta.114.0.0-beta.11M]:[4.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.11]'
+   implementation 'io.github.revxrsal:lamp.common:[VERSION]'
+   implementation 'io.github.revxrsal:lamp.[PLATFORM]:[VERSION]'
 }
 ```
 {% endtab %}
@@ -78,8 +78,8 @@ dependencies {
 {% tab title="build.gradle.kts" %}
 ```kotlin
 dependencies {
-   implementation("io.github.revxrsal:lamp.common:[4.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.11]")
-   implementation("io.github.revxrsal:lamp.[PLATF4.0.0-beta.114.0.0-beta.11M]:[4.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.114.0.0-beta.11]")
+   implementation("io.github.revxrsal:lamp.common:[VERSION]")
+   implementation("io.github.revxrsal:lamp.[PLATFORM]:[VERSION]")
 }
 ```
 {% endtab %}
@@ -87,20 +87,20 @@ dependencies {
 
 Latest version: ![](https://img.shields.io/maven-metadata/v/https/repo1.maven.org/maven2/io/github/revxrsal/lamp.common/maven-metadata.xml.svg?label=maven%20central\&colorB=brightgreen)
 
-Where `[PLATF4.0.0-beta.114.0.0-beta.11M]` is any of the following:
+Where `[PLATFORM]` is any of the following:
 
 * `bukkit`: Contains integrations for the [Bukkit](https://www.spigotmc.org/) platform
-* `bungee`: Contains integrations for the [BungeeCord](https://www.spigotmc.org/wiki/bungeecord/) AP4.0.0-beta.11
-* `brigadier`: Contains integrations for [Mojang's Brigadier](https://github.com/Mojang/brigadier) AP4.0.0-beta.11
-* `sponge`: Contains integrations for the [4.0.0-beta.11ponge](https://spongepowered.org/) platform (version 8+)
-* `paper`: Contains extra features for the [PaperMC](https://papermc.io/) AP4.0.0-beta.11
-* `velocity`: Contains integrations for the [4.0.0-beta.11elocityPowered ](https://papermc.io/software/velocity)AP4.0.0-beta.11
+* `bungee`: Contains integrations for the [BungeeCord](https://www.spigotmc.org/wiki/bungeecord/) API
+* `brigadier`: Contains integrations for [Mojang's Brigadier](https://github.com/Mojang/brigadier) API
+* `sponge`: Contains integrations for the [Sponge](https://spongepowered.org/) platform (version 8+)
+* `paper`: Contains extra features for the [PaperMC](https://papermc.io/) API
+* `velocity`: Contains integrations for the [VelocityPowered ](https://papermc.io/software/velocity)API
 * `minestom`: Contains integrations for the [Minestom](https://minestom.net/) platform
-* `fabric`: Contains integrations for the [Fabric](https://fabricmc.net/) modding AP4.0.0-beta.11
-* `jda`: Contains integrations for the [Java Discord AP4.0.0-beta.11](https://github.com/discord-jda/JDA)
-* `cli`: A minimal implementation of the Lamp AP4.0.0-beta.11s for command-line applications
+* `fabric`: Contains integrations for the [Fabric](https://fabricmc.net/) modding API
+* `jda`: Contains integrations for the [Java Discord API](https://github.com/discord-jda/JDA)
+* `cli`: A minimal implementation of the Lamp APIs for command-line applications
 
-### 4.0.0-beta.11ptional: Preserve parameter names
+### Optional: Preserve parameter names
 
 Lamp identifies parameters by their names and uses them to generate relevant command metadata. By default, Java does not preserve parameter names reflectively. You need to add the following to your project:&#x20;
 
@@ -109,8 +109,8 @@ Lamp identifies parameters by their names and uses them to generate relevant com
 ```html
 <plugins>
   <plugin>
-    <group4.0.0-beta.11d>org.apache.maven.plugins</group4.0.0-beta.11d>
-    <artifact4.0.0-beta.11d>maven-compiler-plugin</artifact4.0.0-beta.11d>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
     <version>3.8.0</version>
     <configuration>
       <compilerArgs>
@@ -132,7 +132,7 @@ compileJava {
 
 // optional: if you're using Kotlin
 compileKotlin {
-    kotlin4.0.0-beta.11ptions.javaParameters = true
+    kotlinOptions.javaParameters = true
 }
 ```
 {% endtab %}
@@ -146,7 +146,7 @@ tasks.withType<JavaCompile> {
 
 // optional: if you're using Kotlin
 tasks.withType<KotlinJvmCompile> {
-    compiler4.0.0-beta.11ptions {
+    compilerOptions {
         javaParameters = true
     }
 }
@@ -164,8 +164,8 @@ Here’s how you can set the Kotlin compiler option `javaParameters = true` in t
 <build>
     <plugins>
         <plugin>
-            <group4.0.0-beta.11d>org.jetbrains.kotlin</group4.0.0-beta.11d>
-            <artifact4.0.0-beta.11d>kotlin-maven-plugin</artifact4.0.0-beta.11d>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-maven-plugin</artifactId>
             <!-- ... your configuration here ... -->
             <configuration>
                 <args>
@@ -181,7 +181,7 @@ Here’s how you can set the Kotlin compiler option `javaParameters = true` in t
 {% tab title="build.gradle" %}
 ```groovy
 kotlin {
-    compiler4.0.0-beta.11ptions {
+    compilerOptions {
         javaParameters = true
     }
 }
@@ -191,7 +191,7 @@ kotlin {
 {% tab title="build.gradle.kts" %}
 ```kotlin
 kotlin {
-    compiler4.0.0-beta.11ptions {
+    compilerOptions {
         javaParameters = true
     }
 }
