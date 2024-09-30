@@ -22,7 +22,7 @@ public void sendHelpMenu(
 	   @Range(min = 1) @Default("1") int page,
 	   Help.RelatedCommands<BukkitCommandActor> commands
 ) {
-   var list = commands.asPage(page, ENTRIES_PER_PAGE);
+   var list = commands.paginate(page, ENTRIES_PER_PAGE);
    for (var command : list) {
       actor.reply("- " + command.usage());
    }
@@ -40,7 +40,7 @@ fun sendHelpMenu(
    @Range(min = 1) @Optional page: Int = 1,
    commands: Help.RelatedCommands<BukkitCommandActor>
 ) {
-   val list = commands.asPage(page, ENTRIES_PER_PAGE)
+   val list = commands.paginate(page, ENTRIES_PER_PAGE)
    for (command in list) {
 	   actor.reply("- ${command.usage()}")
    }
@@ -64,7 +64,7 @@ public void sendHelpMenu(
 	   @Range(min = 1) @Default("1") int page,
 	   Help.ChildrenCommands<BukkitCommandActor> commands
 ) {
-   var list = commands.asPage(page, ENTRIES_PER_PAGE);
+   var list = commands.paginate(page, ENTRIES_PER_PAGE);
    for (var command : list) {
       actor.reply("- " + command.usage());
    }
@@ -82,7 +82,7 @@ fun sendHelpMenu(
    @Range(min = 1) @Optional page: Int = 1,
    commands: Help.ChildrenCommands<BukkitCommandActor>
 ) {
-   val list = commands.asPage(page, ENTRIES_PER_PAGE)
+   val list = commands.paginate(page, ENTRIES_PER_PAGE)
    for (command in list) {
 	   actor.reply("- ${command.usage()}")
    }
@@ -106,7 +106,7 @@ public void sendHelpMenu(
 	   @Range(min = 1) @Default("1") int page,
 	   Help.SiblingCommands<BukkitCommandActor> commands
 ) {
-   var list = commands.asPage(page, ENTRIES_PER_PAGE);
+   var list = commands.paginate(page, ENTRIES_PER_PAGE);
    for (var command : list) {
       actor.reply("- " + command.usage());
    }
@@ -124,7 +124,7 @@ fun sendHelpMenu(
    @Range(min = 1) @Optional page: Int = 1,
    commands: Help.SiblingCommands<BukkitCommandActor>
 ) {
-   val list = commands.asPage(page, ENTRIES_PER_PAGE)
+   val list = commands.paginate(page, ENTRIES_PER_PAGE)
    for (command in list) {
 	   actor.reply("- ${command.usage()}")
    }
