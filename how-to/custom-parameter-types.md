@@ -229,7 +229,7 @@ A nicety in ParameterType is that it allows us to define custom suggestions for 
 {% tab title="Java" %}
 ```java
 @Override public @NotNull SuggestionProvider<BukkitCommandActor> defaultSuggestions() {
-    return (input, context) -> List.copyOf(questManager.quests().keySet());
+    return (context) -> List.copyOf(questManager.quests().keySet());
 }
 ```
 {% endtab %}
@@ -237,7 +237,7 @@ A nicety in ParameterType is that it allows us to define custom suggestions for 
 {% tab title="Kotlin" %}
 ```kotlin
 override fun defaultSuggestions(): SuggestionProvider<BukkitCommandActor> {
-    return SuggestionProvider { _, _ -> questManager.quests.keys.toList() }
+    return SuggestionProvider { _ -> questManager.quests.keys }
 }
 ```
 {% endtab %}
