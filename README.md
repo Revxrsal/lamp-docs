@@ -7,40 +7,6 @@ description: >-
 
 # Setting up
 
-## Prerequisites
-
-* Java 17 or newer
-
-## Configuring Java 17
-
-To enable Java 17, add the following (depending on your project structure):
-
-{% tabs %}
-{% tab title="pom.xml" %}
-```html
-<properties>
-        <maven.compiler.release>17</maven.compiler.release>
-</properties>
-```
-{% endtab %}
-
-{% tab title="build.gradle" %}
-```groovy
-java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
-}
-```
-{% endtab %}
-
-{% tab title="build.gradle.kts" %}
-```kotlin
-java {
-    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ## Adding Lamp dependency&#x20;
 
 To add Lamp to your project, add the following (depending on your project structure):
