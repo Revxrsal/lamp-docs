@@ -23,10 +23,6 @@ Lamp's Brigadier integration is enabled by default for 1.13+ but with some nuanc
 
 ## Setting up
 
-### Prerequisites
-
-* Java 17 or newer
-
 ### Adding Lamp dependency
 
 To add Lamp to your project, add the following (depending on your project structure):
