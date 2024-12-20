@@ -164,6 +164,11 @@ public class MyPlugin {
         this.server = server;
         this.lamp = VelocityLamp.builder(this, server).build();
         lamp.register(new MyCommand());
+        // register all your commands here
+        lamp.register(...);
+
+        // IMPORTANT: You MUST call this to register your commands to Velocity
+        lamp.accept(brigadier(server)); 
     }
 
     public static class MyCommand {
@@ -197,6 +202,11 @@ class MyPlugin @Inject constructor(
 
     init {
         lamp.register(MyCommand())
+        // register all your commands here
+        lamp.register(...)
+
+        // IMPORTANT: You MUST call this to register your commands to Velocity
+        lamp.accept(brigadier(server)) 
     }
 
     class MyCommand {
