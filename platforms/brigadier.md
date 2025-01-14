@@ -11,10 +11,6 @@ Because Lamp and Brigadier share a lot in common in structure and organization, 
 
 ## Setting up
 
-### Prerequisites
-
-* Java 17 or newer
-
 ### Adding Lamp dependency
 
 To add Lamp to your project, add the following (depending on your project structure):
