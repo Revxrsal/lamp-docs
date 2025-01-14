@@ -2,6 +2,7 @@
 description: >-
   This page describes how to integrate Lamp with BungeeCord, as well as what to
   expect out of it.
+icon: chart-network
 ---
 
 # BungeeCord

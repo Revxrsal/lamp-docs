@@ -2,6 +2,7 @@
 description: >-
   This page describes how to integrate Lamp with Fabric, as well as what to
   expect out of it.
+icon: mitten
 ---
 
 # Fabric

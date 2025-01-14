@@ -2,6 +2,7 @@
 description: >-
   This page describes how to integrate Lamp with Velocity 3+, as well as what to
   expect out of it.
+icon: circle-nodes
 ---
 
 # Velocity

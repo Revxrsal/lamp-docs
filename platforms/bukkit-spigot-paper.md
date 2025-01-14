@@ -2,6 +2,7 @@
 description: >-
   This page describes how to integrate Lamp with Bukkit (Spigot) and Paper, as
   well as what to expect out of it.
+icon: bucket
 ---
 
 # Bukkit / Spigot / Paper
@@ -16,10 +17,10 @@ You may need to depend on the `brigadier` module if you would like to customize 
 
 Lamp's Brigadier integration is enabled by default for 1.13+ but with some nuances. Here is a support table:
 
-| Version         | Brigadier Supported                                               |
-| --------------- | ----------------------------------------------------------------- |
-| 1.13 - 1.19     | :white\_check\_mark:                                              |
-| 1.19.1+         | :heavy\_check\_mark: Paper only                                   |
+| Version     | Brigadier Supported             |
+| ----------- | ------------------------------- |
+| 1.13 - 1.19 | :white\_check\_mark:            |
+| 1.19.1+     | :heavy\_check\_mark: Paper only |
 
 ## Setting up
 
@@ -209,4 +210,3 @@ class MyPlugin : JavaPlugin() {
 ```
 {% endtab %}
 {% endtabs %}
-

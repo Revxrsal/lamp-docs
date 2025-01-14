@@ -2,6 +2,7 @@
 description: >-
   This page describes how to integrate Lamp with JDA's slash commands, as well
   as what to expect out of it.
+icon: discord
 ---
 
 # JDA

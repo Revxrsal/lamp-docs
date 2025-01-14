@@ -2,6 +2,7 @@
 description: >-
   This page describes how to integrate Lamp with Sponge 8+, as well as what to
   expect out of it.
+icon: soap
 ---
 
 # Sponge

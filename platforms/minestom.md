@@ -2,6 +2,7 @@
 description: >-
   This page describes how to integrate Lamp with Minestom, as well as what to
   expect out of it.
+icon: cloud
 ---
 
 # Minestom
