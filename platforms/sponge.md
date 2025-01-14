@@ -9,10 +9,6 @@ icon: soap
 
 ## Setting up
 
-### Prerequisites
-
-* Java 17 or newer
-
 ### Adding Lamp dependency
 
 To add Lamp to your project, add the following (depending on your project structure):
