@@ -117,7 +117,7 @@ Notice that by specifying the Player type, we automatically get tab completions 
 
 This is the beauty of Lamp! You describe the command and write the code that needs to be executed. Everything else, like auto-completions, validation, and parsing is done under the hood.
 
-> :bulb: It may seem like magic that Lamp knows how to parse the \`org.bukkit.entity.Player\` type. Not much magic is involved, though! Lamp has built-in support for the following types:
+> :bulb: It may seem like magic that Lamp knows how to parse the `org.bukkit.entity.Player` type. Not much magic is involved, though! Lamp has built-in support for the following types:
 >
 > * java.lang.String
 > * long, int, short, byte, double, and float
