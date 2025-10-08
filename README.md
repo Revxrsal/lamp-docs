@@ -59,7 +59,6 @@ Where `[PLATFORM]` is any of the following:
 * `bungee`: Contains integrations for the [BungeeCord](https://www.spigotmc.org/wiki/bungeecord/) API
 * `brigadier`: Contains integrations for [Mojang's Brigadier](https://github.com/Mojang/brigadier) API
 * `sponge`: Contains integrations for the [Sponge](https://spongepowered.org/) platform (version 8+)
-* `paper`: Contains extra features for the [PaperMC](https://papermc.io/) API
 * `velocity`: Contains integrations for the [VelocityPowered ](https://papermc.io/software/velocity)API
 * `minestom`: Contains integrations for the [Minestom](https://minestom.net/) platform
 * `fabric`: Contains integrations for the [Fabric](https://fabricmc.net/) modding API
