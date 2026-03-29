@@ -44,7 +44,7 @@ dependencies {
    // Required for all platforms
    implementation 'io.github.revxrsal:lamp.common:[VERSION]'
    
-   // Sponge module
+   // Minestom module
    implementation 'io.github.revxrsal:lamp.minestom:[VERSION]'
 }
 ```
@@ -56,7 +56,7 @@ dependencies {
     // Required for all platforms
     implementation("io.github.revxrsal:lamp.common:[VERSION]")
     
-    // Velocity module
+    // Minestom module
     implementation("io.github.revxrsal:lamp.minestom:[VERSION]")
 }
 ```
