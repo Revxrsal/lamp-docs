@@ -1,13 +1,13 @@
 ---
-icon: screwdriver-wrench
 description: >-
   This page describes how you can add Lamp to your own projects, using Gradle or
   Maven.
+icon: screwdriver-wrench
 ---
 
 # Setting up
 
-## Adding Lamp dependency&#x20;
+## Adding Lamp dependency
 
 To add Lamp to your project, add the following (depending on your project structure):
 
@@ -64,11 +64,12 @@ Where `[PLATFORM]` is any of the following:
 * `minestom`: Contains integrations for the [Minestom](https://minestom.net/) platform
 * `fabric`: Contains integrations for the [Fabric](https://fabricmc.net/) modding API
 * `jda`: Contains integrations for the [Java Discord API](https://github.com/discord-jda/JDA)
+* `geyser`: Contains integrations for the [Geyser](http://geysermc.org/) API
 * `cli`: A minimal implementation of the Lamp APIs for command-line applications
 
 ### Optional: Preserve parameter names
 
-Lamp identifies parameters by their names and uses them to generate relevant command metadata. By default, Java does not preserve parameter names reflectively. You need to add the following to your project:&#x20;
+Lamp identifies parameters by their names and uses them to generate relevant command metadata. By default, Java does not preserve parameter names reflectively. You need to add the following to your project:
 
 {% tabs %}
 {% tab title="pom.xml" %}
