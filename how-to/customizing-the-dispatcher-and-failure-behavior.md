@@ -12,8 +12,8 @@ Therefore, Lamp allows you to tweak the resolution strategy, and change the fail
 
 The `DispatcherSettings` class allows you to customize the following:
 
-1. The maximum number of commands it should try
-2. The failure behavior that receives all the failed attempts (`Potential`s) and the user input. This is done using the `FailureHandler` interface.
+1. The failure behavior that receives all the failed attempts (`Potential`s) and the user input. This is done using the `FailureHandler` interface.
+2. Whether input left after a command's last argument is an error. By default, `/foo bar` runs `/foo` if no other command accepts `bar`. With `rejectTrailingInput(true)`, it fails with a `TrailingInputException`.
 
 ### Example
 
@@ -22,7 +22,7 @@ The `DispatcherSettings` class allows you to customize the following:
 ```java
 var builder = ...;
 builder.dispatcherSettings(settings -> {
-    settings.maximumFailedAttempts(10).failureHandler((actor, failedAttempts, input) -> {
+    settings.rejectTrailingInput(true).failureHandler((actor, failedAttempts, input) -> {
         ...
     });
 });
@@ -33,7 +33,7 @@ builder.dispatcherSettings(settings -> {
 ```kotlin
 val builder = ...
 builder.dispatcherSettings { settings ->
-    settings.maximumFailedAttempts(10).failureHandler { actor, failedAttempts, input ->
+    settings.rejectTrailingInput(true).failureHandler { actor, failedAttempts, input ->
     
     }
 }
