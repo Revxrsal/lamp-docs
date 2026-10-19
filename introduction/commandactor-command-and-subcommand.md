@@ -69,6 +69,12 @@ public class GameCommands {
 ```
 {% endcode %}
 
+* Inner classes are **not** registered automatically, as Lamp never creates instances of your classes. Register each class that contains commands yourself. Lamp will still apply the `@Command` and `@Subcommand` of the classes it is nested in:
+
+```java
+lamp.register(new GameCommands(), new GameCommands.Arena());
+```
+
 * **Argument names**
   * `@Command` and `@Subcommand` can define arguments that come in the middle of the command
 
